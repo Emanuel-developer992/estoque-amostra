@@ -1,0 +1,103 @@
+<div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+    <script type="text/javascript" src="/fluighub/assets/js/fluighub.js"></script>
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>  
+    
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+        <a class="nav-link nav-close active" data-toggle="tab" href="#amostra_nav">Amostra em Estoque</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link nav-close" data-toggle="tab" href="#dados_nav">Dados da Amostra</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+
+    <div id="amostra_nav" class="container tab-pane active" aria-selected="true">
+
+        <div class="col-md-12">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4 j-medcin-p">Estoque de Amostra</h1>
+                    <p class="lead j-medcin-h1">Amostras disponivéis em estoque</p>
+                </div>
+            </div>
+
+            <!-- 1° Painel -->
+            <div class="panel panel-primary painel-medcin-div1" style="padding: 0px">
+                <div class="panel-heading painel-medcin">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="col-md-6">
+                        <img src="https://github.com/Emanuel-developer992/imagens/blob/main/Medcin/Estoque%20Amostra.png?raw=true" style="width: 75%; margin-left: 4%;">
+                    </div>
+
+                    <div class="col-md-4" style="margin-top: 10%;">
+                        <h2>Amostras em Estoque</h2>
+                        <p class="p-cinza">Amostras disponivéis...</p>
+                        <select id="info2" name="info2" type="text" class="form-control" style="height: 40px;">
+                            <option value="">Selecione...</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2" style="margin-top: 10%;">
+                        <h2>Selecionar</h2>
+                        <p class="p-cinza">Abrir especificações...</p>
+                        <button class="btn button-medcin" style="width: 140px; height: 40px; padding-bottom: 3px;" onclick="mecanismoGraph();"><i style="color: white;" class="flaticon flaticon-product icon-md"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 2° Painel -->
+            <div class="panel panel-primary painel-medcin-div1" style="padding: 0px">
+                <div class="panel-body">
+
+                    <div class="row col-lg-12" style="height: 440px;">
+
+                        <div class="row col-lg-3 div-column1">
+                            <div class="row">
+                                <div class="col-md-12" style="margin-top: 33px;">
+                                    <label>Total de Amostra Cadastrada</label>
+                                    <input id="cadastrado" name="cadastrado" class="form-control cadastrada" value="0" readonly>
+                                </div>
+                                <br>
+                                <div class="col-md-12" style="margin-top: 33px;">
+                                    <label>Total de Amostra em Estoque</label>
+                                    <input id="estoque" name="estoque" class="form-control estoque" value="0" readonly>
+                                </div>
+                                <br>
+                                <div class="col-md-12" style="margin-top: 33px;">
+                                    <label>Total de Baixas</label>
+                                    <input id="saida" name="saida" class="form-control saida" value="0" readonly>
+                                </div>  
+                            </div>
+                        </div>
+
+                        <div class="row col-lg-8 div-column2">
+                            <div id="div_chart" class="chart-container" style="position: relative; height:20%; width:122%">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                                
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+    <div id="analise_critica_nav" class="container tab-pane fade" aria-selected="false">
+
+    </div>
+    
+</div>

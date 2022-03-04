@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>  
+    </head>
+
+    <body>
+        <div style="width: 900px; height: 600px;">
+            <canvas id="myChart" width="400px" height="400px"></canvas>
+            <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+                    datasets: [
+                            {
+                            label: "Amostra Cadastrada",
+                            data: ["10", "5", "7", "20", "0", "15", "23", "12", "9", "14", "11", "2"],
+                            borderWidth: 2,
+                            borderColor: 'rgba(46,38,210,0.85)',
+                            backgroundColor: 'transparent',
+
+                        },
+                        {
+                            label: "Em Estoque",
+                            data: ["10", "15", "13", "13", "9", "24", "10", "20", "29", "3", "12", "13"],
+                            borderWidth: 2,
+                            borderColor: 'rgba(6,204,6,0.85)',
+                            backgroundColor: 'transparent',
+
+                        },
+                        {
+                            label: "Saída de Estoque",
+                            data: ["0", "0", "9", "20", "4", "0", "24 ", "2", "0", "40", "2", "1"],
+                            borderWidth: 2,
+                            borderColor: 'rgba(213,45,45,0.85)',
+                            backgroundColor: 'transparent',
+
+                        },
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            </script>
+        </div>
+    </body>
+
+</html>
